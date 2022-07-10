@@ -1,5 +1,6 @@
 package com.userregistration;
 
+import java.io.BufferedReader;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -56,6 +57,19 @@ public class Operations {
             System.out.println("Your Email Address is valid");
         else
             System.out.println("Your Email Address is invalid");
+        return result;
+    }
+    // Method to check mobile number.
+    public static boolean validMobileNumber(String mobNumber) {
+        String regex = "^[0-9]{2}\\s{0,1}[0-9]{10,}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(mobNumber);
+        boolean result = matcher.matches();
+        // if condition is to check the email address is valid or not
+        if (result)
+            System.out.println("Your Mobile Number is valid");
+        else
+            System.out.println("Your Mobile Number is invalid");
         return result;
     }
 }

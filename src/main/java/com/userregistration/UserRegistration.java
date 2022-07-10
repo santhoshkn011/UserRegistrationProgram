@@ -1,6 +1,6 @@
 /*
-As a User need to enter a valid email - E.g. abc.xyz@bl.co.in - Email has 3 mandatory parts (abc, bl & co) and 2 optional (xyz & in) with
-precise @ and . positions
+As a User need to follow pre-defined
+Mobile Format - E.g. 91 9919819801 - Country code follow by space and 10 digit number
  */
 package com.userregistration;
 import java.util.Scanner;
@@ -15,7 +15,7 @@ public class UserRegistration {
         int select;
         do {
             System.out.println("Please Select the Options:\n1. Validation of First Name\n2. Validation of Last Name" +
-                    "\n3. Email Address validation.");
+                    "\n3. Email Address validation.\n4. Mobile Number Validation");
             choose = sc.nextInt();
             switch (choose) {
                 case 1:
@@ -27,12 +27,15 @@ public class UserRegistration {
                 case 3:
                     operations.validEmailAddress();
                     break;
+                case 4:
+                    operations.validMobileNumber("91 9704329740");
+                    break;
                 default:
                     System.out.println("Invalid: Enter valid details.");
                     break;
             }
-            System.out.println("If you want to continue press 1 or to exit press 4");
+            System.out.println("If you want to continue press 1 or to exit press 5");
             select = sc.nextInt();
-        } while (select != 4);
+        } while (select != 5);
     }
 }
