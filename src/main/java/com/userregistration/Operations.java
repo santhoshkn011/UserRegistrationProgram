@@ -24,4 +24,20 @@ public class Operations {
         }
         return result;
     }
+    //method to check the last name
+    public static boolean validLastName() {
+        System.out.print("Enter the Last name: ");
+        String nameLast = sc.next();
+        //regex function is used to check the first name
+        String regix = "^[A-Z]{1}[a-z]{2,}$";
+        Pattern p = Pattern.compile(regix);
+        Matcher m = p.matcher(nameLast);
+        boolean result = m.matches();
+        // if condition is to check the Last name is valid or not
+        if (result)
+            System.out.println("Your Last name is valid");
+        else
+            System.out.println("Your Last name is invalid");
+        return result;
+    }
 }
