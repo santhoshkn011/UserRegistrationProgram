@@ -76,7 +76,7 @@ public class Operations {
     public static boolean validPassword(){
         System.out.print("Enter the Password: ");
         String password = sc.next();
-        String regex = "^[A-Z]{1}[A-Za-z0-9@._-]{7,}$";
+        String regex = "^(?=.*[A-z])(?=.*[0-9])([a-zA-Z0-9@._-]).{8,}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(password);
         boolean result = matcher.matches();
