@@ -40,4 +40,22 @@ public class Operations {
             System.out.println("Your Last name is invalid");
         return result;
     }
+    // Method to check email.
+    public static boolean validEmailAddress(){
+        System.out.print("Enter the Email Address:  ");
+        String emailId = sc.next();
+        /*
+        E.g. abc.xyz@bl.co.in - Email has 3 mandatory parts (abc, bl & co) and 2 optional (xyz & in) with precise @ and . positions
+        */
+        String regex = "^[a-z]{3}[a-zA-z.]{0,}+@+bl.co+[a-z.]{0,}$";
+        Pattern p = Pattern.compile(regex);
+        Matcher m = p.matcher(emailId);
+        boolean result = m.matches();
+        // if condition is to check the email address is valid or not
+        if (result)
+            System.out.println("Your Email Address is valid");
+        else
+            System.out.println("Your Email Address is invalid");
+        return result;
+    }
 }
