@@ -76,7 +76,7 @@ public class Operations {
     public static boolean validPassword(){
         System.out.print("Enter the Password: ");
         String password = sc.next();
-        String regex = "^[A-Za-z0-9@._-]{8,}$";
+        String regex = "^[A-Z]{1}[A-Za-z0-9@._-]{7,}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(password);
         boolean result = matcher.matches();
@@ -84,7 +84,7 @@ public class Operations {
         if (result)
             System.out.println("This is the valid password");
         else
-            System.out.println("Your Password is invalid and it should be minimum character");
+            System.out.println("Your Password is invalid.");
         return result;
     }
 }

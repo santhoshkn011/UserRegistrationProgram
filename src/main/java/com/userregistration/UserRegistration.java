@@ -3,6 +3,9 @@ As a User need to follow pre-defined Password rules.
 Rule1
  – minimum 8
 Characters - NOTE – All rules must be passed
+
+Rule2
+– Should have at least 1 Upper Case
  */
 package com.userregistration;
 import java.util.Scanner;
