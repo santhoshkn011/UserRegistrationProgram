@@ -1,6 +1,5 @@
 package com.userregistration;
 
-import java.io.BufferedReader;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -76,7 +75,14 @@ public class Operations {
     public static boolean validPassword(){
         System.out.print("Enter the Password: ");
         String password = sc.next();
-        String regex = "^(?=.*[A-z])(?=.*[0-9])([a-zA-Z0-9@._-]).{8,}$";
+        /*
+         * (?=.*[A-Z]) represents an upper case character that must occur at least once.
+         * (?=.*[0-9]) represents a digit must occur at least once.
+         * (?+.*[@#$%^&*()] represent the special symbol at least once.
+         * (?=.*[a-zA-z0-9]) represents a lower case character or number  must occur at least once.
+         * {8,} represents at least 8 or more characters.
+         */
+        String regex = "^(?=.*[A-z])(?=.*[0-9])(?=.*[@#$%^&*()-+=])([a-zA-Z0-9@._-]).{8,}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(password);
         boolean result = matcher.matches();
