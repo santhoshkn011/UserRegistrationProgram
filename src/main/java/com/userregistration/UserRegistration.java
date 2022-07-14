@@ -1,8 +1,5 @@
 /*
-Refactor the Code to
-throw custom
-exceptions in case of
-Invalid User Details - Rewrite all Test Cases to take in Custom
+Refactor the Code to use Lambda Function to validate User Entry
  */
 package com.userregistration;
 import java.util.Scanner;

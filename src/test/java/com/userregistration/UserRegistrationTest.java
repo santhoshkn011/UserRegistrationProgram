@@ -4,55 +4,52 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class UserRegistrationTest {
+    //Creating object for operation class in main method
     Operations operations = new Operations();
-    // test case for first name
+    //test case for first name
     @Test
     public void givenFirstName_WhenProper_ShouldReturnTrue() {
         try {
-            Assertions.assertTrue(Operations.validFirstName("Santhosh"));
-            System.out.println("Valid First Name.");
+            Assertions.assertTrue(operations.fNameValidate.validateFirstName("Santhosh"));
+            System.out.println("First Name is valid");
         }catch (InvalidFirstNameException e){
-            System.out.println("Invalid First Name: " + e);
+            System.out.println("Invalid First Name " + e);
         }
     }
-    //test case for Last name
     @Test
     public void givenLastName_WhenProper_ShouldReturnTrue() {
         try {
-            Assertions.assertTrue(Operations.validLastName("nayak"));
-            System.out.println("Valid Last name");
+            Assertions.assertTrue(operations.lNameValidate.validateLastName(""));
+            System.out.println("Last Name is valid");
         }catch (InvalidLastNameException e){
-            System.out.println("Invalid Last Name: " + e);
+            System.out.println("Invalid last name " + e);
         }
     }
-    //test case for Email Id
     @Test
     public void givenEmailId_WhenProper_ShouldReturnTrue() {
         try {
-            Assertions.assertTrue(Operations.validEmailId("santhosh123@gmail.com"));
-            System.out.println("Valid Email Address.");
+            Assertions.assertTrue(operations.emailIDValidate.validateEmailID("santhosh411kn@gmail.com"));
+            System.out.println("Email Id is valid ");
         }catch (InvalidEmailIdException e){
-            System.out.println("Invalid Email ID: " + e);
+            System.out.println("Invalid Email ID " + e);
         }
     }
-    // test case for Mobile number
     @Test
     public void givenMobileNumber_WhenProper_ShouldReturnTrue() {
         try {
-            Assertions.assertTrue(Operations.validMobileNumber("91 987654321"));
-            System.out.println("Valid mobile Number.");
+            Assertions.assertTrue(operations.mobNumberValidate.validateMobNumber("91 970432974"));
+            System.out.println("Mobile number is valid ");
         }catch (InvalidMobileNumberException e){
-            System.out.println("Invalid Mobile Number: " + e);
+            System.out.println("Invalid Mobile Number" + e);
         }
     }
-    // test case for Password
     @Test
     public void givenPassword_WhenProper_ShouldReturnTrue()  {
         try {
-            Assertions.assertTrue(Operations.validPassword("Santhosh@kumar11"));
-            System.out.println("Valid Password.");
+            Assertions.assertTrue(operations.passwordValidate.validatePassword("YamahaFS100@c"));
+            System.out.println("Password is valid");
         }catch (InvalidPasswordException e){
-            System.out.println("Invalid Password: " + e);
+            System.out.println("Invalid Password " + e);
         }
     }
 }
